@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
   // Menu items for the navigation bar
   const menuItems = [
-    { name: 'Home', path: '/home', hoverText: 'Home' },
+    { name: 'Home', path: '', hoverText: 'Home' },
     { name: 'Our Friends', path: '/ourfriends', hoverText: 'Our Friends' },
     { name: 'Contact', path: '/contact', hoverText: 'Contact' }
   ];
