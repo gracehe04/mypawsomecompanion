@@ -1,11 +1,11 @@
 import React from 'react';
+import usePets from '../../hooks/usePets';
 import styled from 'styled-components';
-import usePets from '../../hooks/usePets'; 
 import { Link } from 'react-router-dom';
 
-// Pets section component
-const PetsSection: React.FC = () => {
-  // Fetching pet information
+// Pets display component
+const PetsDisplay: React.FC = () => {
+  // Fetching pet information from global state
   const { pets, loading, error } = usePets();
 
   if (loading) return <p>Loading...</p>;
@@ -15,7 +15,7 @@ const PetsSection: React.FC = () => {
     <PetsContainer>
       <Info>Pets Available for Adoption</Info>
       <PetsGrid>
-        {pets.slice(0, 5).map((pet) => ( 
+        {pets.slice(0, 5).map((pet) => (
           <StyledLink to='/ourfriends' key={pet.id}> {/* Wrapping PetCard with Link to /ourfriends */}
             <PetCard>
               <PetImage src={pet.url} alt={pet.title} />
@@ -32,8 +32,6 @@ const PetsSection: React.FC = () => {
 };
 
 // Styled components
-
-export default PetsSection;
 
 const PetsContainer = styled.div`
   text-align: center;
@@ -97,3 +95,5 @@ const ShowMore = styled.h2`
   text-overflow: ellipsis;
   padding: 10px 20px;
 `;
+
+export default PetsDisplay;
