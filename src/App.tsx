@@ -5,19 +5,24 @@ import Home from './pages/Home/Home';
 import Contact from './pages/Contact';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import { GlobalStateProvider } from './hooks/GlobalState'; 
 import styled from 'styled-components';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/ourfriends" element={<OurFriends /> }/>
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer/>
-    </Router>
+    <GlobalStateProvider> 
+      <Router>
+        <NavBar />
+        <Content>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/ourfriends" element={<OurFriends />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Content>
+        <Footer />
+      </Router>
+    </GlobalStateProvider>
   );
 };
 
