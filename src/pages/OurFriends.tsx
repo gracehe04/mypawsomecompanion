@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useGlobalState } from '../hooks/GlobalState';
+import usePets from '../hooks/usePets';
 import styled from 'styled-components';
 
 // interface for pet information
@@ -14,7 +14,7 @@ interface Pet {
 
 // Our friends component
 const OurFriends: React.FC = () => {
-  const { pets, loading, error } = useGlobalState();
+  const { pets, loading, error } = usePets();
   const [filter, setFilter] = useState<string>('');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [selectedPets, setSelectedPets] = useState<Set<string>>(new Set());
