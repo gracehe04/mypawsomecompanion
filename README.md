@@ -51,7 +51,7 @@ npm install
 npm start
 ```
 
-# 🔗 Contact Form Demo
+## 🔗 Contact Form Demo
 
 https://github.com/gracehe04/mypawsomecompanion/assets/129336094/0dccf48e-18f5-4583-b442-5475691ba001
 
